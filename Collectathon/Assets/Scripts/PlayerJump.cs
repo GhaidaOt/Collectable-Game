@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerJump : MonoBehaviour
 {
+    //Sound
+    public SoundManager sm;
+
     // How high the Player will jump
     [SerializeField] private float jumpForce;
 
@@ -13,6 +16,8 @@ public class PlayerJump : MonoBehaviour
     private Rigidbody rb;
 
     private bool canJump;
+
+    
 
     // Start is called before the first frame update
     private void Start()
@@ -45,6 +50,7 @@ public class PlayerJump : MonoBehaviour
         {
             canJump = false;
             rb.AddForce(Vector3.up * jumpForce);
+            sm.PlayPlayerJump();
         }
     }
 }
