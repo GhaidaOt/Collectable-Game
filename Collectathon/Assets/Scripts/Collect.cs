@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class Collect : MonoBehaviour
 {
     public PlayerJump jumpScript;
     public float count;
-    // Start is called before the first frame update
+    [SerializeField] Text countText;
+
     void Start()
     {
         jumpScript = GetComponent<PlayerJump>();
@@ -14,7 +17,7 @@ public class Collect : MonoBehaviour
 
     private void Update()
     {
-      
+        countText.text = (""+count); 
     }
 
     private void OnTriggerEnter(Collider other)
