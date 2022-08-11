@@ -34,6 +34,7 @@ public class Collect : MonoBehaviour
             {
                 jumpScript.sm.PlayWinSound();
                 win.SetActive(true);
+                gameObject.SetActive(false);
 
             }
 
